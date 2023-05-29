@@ -92,8 +92,8 @@ class Model:
         metrics = keras.metrics.SparseCategoricalAccuracy('accuracy')
         self.model.compile(optimizer=Adam(3e-5), loss=loss, metrics=[metrics, self.f1_m])
 
-    def fit(self, train_data, validation_data, epochs=3):
-        return self.model.fit(train_data, epochs=epochs, validation_data=validation_data, batch_size=16)
+    def fit(self, train_data, validation_data, callbacks, epochs=3):
+        return self.model.fit(train_data, epochs=epochs, validation_data=validation_data, batch_size=16, callbacks=callbacks)
 
     def evaluate(self, dataset):
         return self.model.evaluate(dataset)
