@@ -9,7 +9,7 @@ class JapanesePreprocess(Preprocess):
     The class responsible for preprocessing japanese data.
     """
 
-    def __init__(self, path: str = JAPANESE_DATA_PATH, language="en_US") -> None:
+    def __init__(self, path: str = JAPANESE_DATA_PATH, language="ja-JP") -> None:
         """
         Constructs all the necessary attributes for the **Japanese** class object.
         :param path: path to dataset (*japanese* default)

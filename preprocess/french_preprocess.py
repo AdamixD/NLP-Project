@@ -9,7 +9,7 @@ class FrenchPreprocess(Preprocess):
     The class responsible for preprocessing french data.
     """
 
-    def __init__(self, path: str = FRENCH_DATA_PATH, language="en_US") -> None:
+    def __init__(self, path: str = FRENCH_DATA_PATH, language="fr") -> None:
         """
         Constructs all the necessary attributes for the **FrenchPreprocess** class object.
         :param path: path to dataset (*french* default)
