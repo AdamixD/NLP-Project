@@ -2,29 +2,27 @@ import pandas as pd
 
 from preprocess.preprocess import Preprocess
 
-ESPANOL_DATA_PATH = "data/basic/spanish/espanol.csv"
-
 
 class EspanolPreprocess(Preprocess):
     """
-    The class responsible for preprocessing world news data.
+    The class responsible for preprocessing espanol news data.
     """
 
-    def __init__(self, path: str = ESPANOL_DATA_PATH, language: str = "es") -> None:
+    def __init__(self, path: str, language: str = "es") -> None:
         """
-        Constructs all the necessary attributes for the **WorldNewsPreprocess** class object.
-        :param path: path to dataset (*world_news* default)
+        Constructs all the necessary attributes for the **EspanolPreprocess** class object.
+        :param path: path to dataset
         """
 
-        prepared_data = self.prepare_world_news_data(path)
+        prepared_data = self.prepare_japanese_data(path)
         super().__init__(prepared_data, path, language)
 
     @staticmethod
-    def prepare_world_news_data(path: str = ESPANOL_DATA_PATH) -> pd.DataFrame:
+    def prepare_japanese_data(path: str) -> pd.DataFrame:
         """
-        Prepares world news data for later preprocessing.
-        :param path: path to dataset (*world_news* default)
-        :return: prepared world news data
+        Prepares espanol data for later preprocessing.
+        :param path: path to dataset
+        :return: prepared espanol news data
         """
 
         df = pd.read_csv(path)
