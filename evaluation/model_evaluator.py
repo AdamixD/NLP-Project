@@ -73,3 +73,18 @@ class ModelEvaluator:
         sns.heatmap(cf_matrix, center=True, annot=labels, fmt="", cmap='viridis')
         plt.title(f"Confusion matrix for {set_type} set")
         plt.show()
+
+    @staticmethod
+    def plot_history(train_history, validation_history, metric='Accuracy'):
+        plt.figure(figsize=(7, 5))
+        plt.plot(train_history, linewidth=2, label="Training set")
+        plt.xticks(np.arange(0, len(train_history)), np.arange(1, len(train_history) + 1))
+        plt.locator_params(axis='x', nbins=10)
+        plt.plot(validation_history, linewidth=2, label="Validation set")
+        plt.xticks(np.arange(0, len(validation_history)), np.arange(1, len(validation_history) + 1))
+        plt.locator_params(axis='x', nbins=10)
+        plt.xlabel('Epoch', fontsize=12)
+        plt.ylabel(str.title(metric), fontsize=12)
+        plt.legend(loc="upper left", fontsize=10)
+        plt.grid(True)
+        plt.show()
